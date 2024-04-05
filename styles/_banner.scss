@@ -1,0 +1,37 @@
+.banner {
+  background: url(../images/background.jpeg) center/cover;
+  height: 450px;
+  gap: $space-xl;
+  @include centerChildRow();
+  @media screen and (max-width: 1024px) {
+    height: 300px;
+    gap: $space-lg;
+  }
+  @media screen and (max-width: 768px) {
+    height: 300px;
+    gap: $space-xl 0;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .banner__content {
+    @include centerChildColumn();
+    color: $white-color;
+
+    .banner__content--number {
+      font-size: $size-3xl;
+      padding-bottom: $space-sm;
+      font-family: sans-serif;
+      @media screen and (max-width: 768px) {
+        font-size: $size-xl;
+      }
+    }
+    .banner__content--title {
+      text-transform: uppercase;
+      font-size: $size-sm;
+      @media screen and (max-width: 768px) {
+        font-size: $size-xs;
+      }
+    }
+  }
+}

@@ -1,0 +1,233 @@
+.header__banner {
+  z-index: -1;
+  position: absolute;
+  overflow: hidden;
+}
+.simple {
+  display: flex;
+  /* transition: 0.6s ease; */
+  position: relative;
+}
+
+.header__banner--img {
+  background: cover;
+  max-width: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s linear opacity;
+}
+
+.header__banner--img.active {
+  /* z-index: 4; */
+  position: relative;
+  opacity: 1;
+}
+
+.header {
+  color: $white-color;
+  overflow: hidden;
+  position: relative;
+  /* animation: defilement 8s 1s infinite; */
+  @media screen and (max-width: 768px) {
+    background-repeat: no-repeat;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.navbar__logo {
+  width: 100px;
+  height: 100px;
+  transition: transform 0.6s ease;
+}
+
+.navbar__items--container {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+}
+
+.navbar__items {
+  display: flex;
+  gap: $space-lg;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.navbar__link {
+  color: $white-color;
+  text-transform: uppercase;
+  font-family: $police-title;
+  font-size: $size-2xs;
+}
+
+.navbar__link:hover {
+  color: $main-color;
+  font-size: 1.2em;
+}
+
+.navbar__item:not(:first-child):before {
+  content: "|";
+  position: relative;
+  left: -20px;
+}
+
+.header__div--container {
+  @include centerChildColumn();
+  margin-top: $space-2xl;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 0 $space-sm;
+  }
+}
+
+.header__div--title {
+  border-bottom: 4px $white-color solid;
+  border-top: 4px $white-color solid;
+}
+
+.header__title {
+  text-transform: uppercase;
+  font-size: $size-2xl;
+  font-family: $police-title;
+  font-weight: lighter;
+  padding: $space-lg;
+  letter-spacing: 5px;
+  text-align: center;
+
+  @media screen and (max-width: 1024px) {
+    padding: $space-xs;
+    font-size: $size-lg;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: $space-xs;
+    text-align: center;
+    font-size: $size-xl;
+  }
+}
+
+.header__div--title,
+.header__title {
+  animation: fadein 1s linear;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+  }
+}
+
+.header__description {
+  font-size: $size-lg;
+  text-align: center;
+  padding: $space-sm $space-3xl;
+  animation: fadeinP 1s 1s forwards;
+  visibility: hidden;
+
+  @media screen and (max-width: 1024px) {
+    font-size: $size-md;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: $size-md;
+    padding: $space-md;
+  }
+}
+
+@keyframes fadeinP {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.header__button {
+  color: $white-color;
+  padding: $space-xs $space-md;
+  text-transform: uppercase;
+  background: $main-color;
+  border: none;
+  font-size: $size-xs;
+  margin-top: $space-md;
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
+}
+
+.button__white--icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $space-md;
+}
+
+.button__white--icon.active {
+  background: $white-color;
+}
+
+.header__button,
+.button__white--icons {
+  animation: fadein 1s linear 3s forwards;
+  visibility: hidden;
+}
+
+.button__white--icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px white solid;
+  background: transparent;
+  margin-right: $space-2xs;
+}
+
+.button:hover {
+  font-weight: bold;
+}
+
+/* .sideicons__wrapper {
+    display: flex;
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+    gap: $space-2xs;
+    top: 450px;
+}
+
+.sideicons {
+    height: 30px;
+    width: 30px;
+    border: 1px black solid;
+    @include centerChild();
+    background: white;
+    color: red;
+}
+
+.sideicons:first-child {
+    background: red;
+    color: white;
+} */

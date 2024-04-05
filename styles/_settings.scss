@@ -1,0 +1,95 @@
+// VARIABLES
+
+// COLORS
+$title-color: #696969;
+$text-color: #9d9d9d;
+$main-color: #ecae80;
+$white-color: white;
+// FONT-FAMILIES
+$police-title: "Arvo", sans-serif;
+$police-text: "Raleway", sans-serif;
+// FONT-SIZES
+$size-2xs: 12px;
+$size-xs: 14px;
+$size-sm: 16px;
+$size-md: 18px;
+$size-lg: 22px;
+$size-xl: 24px;
+$size-2xl: 54px;
+$size-3xl: 85px;
+// MARGIN,PADDING,GAP
+$space-2xs: 5px;
+$space-xs: 15px;
+$space-sm: 20px;
+$space-md: 30px;
+$space-lg: 40px;
+$space-xl: 100px;
+$space-2xl: 110px;
+$space-3xl: 145px;
+
+//MIXINS
+@mixin centerChildRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centerChildColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $police-text;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.general__title {
+  color: $title-color;
+  text-transform: uppercase;
+  font-size: $size-xl;
+  font-family: $police-title;
+  text-align: center;
+  letter-spacing: 0.6px;
+}
+
+.general__p {
+  color: $text-color;
+  font-size: $size-sm;
+  text-align: center;
+  padding: 0 $space-3xl;
+  @media screen and (max-width: 768px) {
+    padding: 0 $space-md;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio,
+  .contenu,
+  .actions {
+    padding: $space-md 0;
+  }
+
+  .presentation {
+    padding-top: $space-md;
+  }
+}

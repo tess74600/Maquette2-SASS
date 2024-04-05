@@ -1,0 +1,31 @@
+.buy {
+  background: #f1f1f1;
+  padding: $space-lg;
+  gap: $space-xl;
+  @include centerChildRow();
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: $space-md;
+  }
+
+  .buy__p {
+    font-size: $size-md;
+    color: $title-color;
+    @media screen and (max-width: 768px) {
+      font-size: $size-sm;
+      text-align: center;
+    }
+  }
+
+  .buy__button {
+    padding: $space-xs $space-md;
+    background: $main-color;
+    text-transform: uppercase;
+    color: $white-color;
+    border: 1px $main-color solid;
+    font-size: $size-xs;
+    @media screen and (max-width: 768px) {
+      padding: $space-2xs $space-sm;
+    }
+  }
+}

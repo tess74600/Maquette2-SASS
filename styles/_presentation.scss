@@ -1,0 +1,13 @@
+.presentation {
+  @include centerChildColumn();
+  padding-top: $space-xl;
+  gap: $space-lg;
+
+  .presentation__img {
+    width: 42%;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}

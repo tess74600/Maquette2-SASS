@@ -1,0 +1,116 @@
+.actions {
+  padding: $space-2xl 0;
+
+  .actions__title {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+  }
+
+  .actions__content--wrapper {
+    padding-top: $space-xl;
+    display: flex;
+    gap: $space-md;
+
+    @media screen and (max-width: 1024px) {
+      display: flex;
+      gap: $space-md;
+      flex-wrap: wrap;
+      padding: $space-lg;
+      justify-content: center;
+    }
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+      gap: $space-lg;
+      padding-top: $space-lg;
+    }
+    .actions__img--wrapper {
+      @media screen and (max-width: 1024px) {
+        width: 45%;
+        &:last-of-type {
+          margin: auto;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        gap: $space-xs;
+        width: 80%;
+      }
+
+      &:last-of-type {
+        @media screen and (max-width: 768px) {
+          padding-top: 0;
+        }
+      }
+      .actions__img {
+        width: 100%;
+        margin-bottom: $space-xs;
+        @media screen and (max-width: 768px) {
+          width: 70%;
+          margin: auto;
+        }
+      }
+      .content--wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: $space-sm;
+        border-bottom: 1px grey solid;
+        border-top: 1px grey solid;
+        padding: $space-xs 0;
+
+        @media screen and (max-width: 768px) {
+          width: 80%;
+          margin: auto;
+          align-items: center;
+        }
+
+        .actions__content--title {
+          text-transform: uppercase;
+          font-family: $police-title;
+          color: $title-color;
+          font-size: $size-sm;
+        }
+        .actions__content--admin {
+          color: $main-color;
+          font-size: $size-xs;
+
+          .actions__content--admin a:hover {
+            font-size: $size-md;
+            font-weight: bold;
+          }
+        }
+        .actions__content--text {
+          color: $text-color;
+          font-size: $size-xs;
+          line-height: 1.5em;
+          @media screen and (max-width: 768px) {
+            text-align: center;
+          }
+        }
+        .actions__content--adds {
+          display: flex;
+          gap: $space-sm;
+
+          .actions__content--addsWrapper {
+            display: flex;
+            gap: $space-xs;
+            @media screen and (max-width: 768px) {
+              gap: $space-2xs;
+            }
+
+            &:first-of-type::after {
+              color: black;
+              content: "|";
+              position: relative;
+              left: 5px;
+            }
+            .actions__content--addsText {
+              font-size: $size-2xs;
+            }
+          }
+        }
+      }
+    }
+  }
+}

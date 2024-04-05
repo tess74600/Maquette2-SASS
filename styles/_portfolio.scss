@@ -1,0 +1,31 @@
+.portfolio {
+  padding-top: $space-xl;
+
+  .portfolio__description {
+    @include centerChildColumn();
+    gap: $space-lg;
+  }
+
+  .portfolio__img--wrapper {
+    padding-top: $space-xl;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    @media screen and (max-width: 1024px) {
+      padding-top: $space-xl;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 768px) {
+      padding-top: $space-xl;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .portfolio__img {
+      width: 100%;
+    }
+  }
+}
